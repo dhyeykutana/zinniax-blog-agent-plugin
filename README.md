@@ -182,3 +182,9 @@ npm run dev
 ```
 
 This uses `concurrently` to run the approval server and orchestrator in parallel in a single terminal.
+
+---
+
+## License
+
+[MIT](LICENSE) © 2026 Sunflower Lab
