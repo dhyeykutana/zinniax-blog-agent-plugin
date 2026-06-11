@@ -1,0 +1,16 @@
+# Secrets — never commit
+.env
+.env.local
+*.local
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / artifacts
+*.log

@@ -1,0 +1,20 @@
+{
+  "name": "zinniax-blog-agent",
+  "version": "1.0.0",
+  "description": "Multi-agent pipeline to auto-write and publish IONM blog posts to ZinniaX WordPress",
+  "type": "module",
+  "scripts": {
+    "start": "node cli/start.js",
+    "pipeline": "node orchestrator.js",
+    "server": "node token-server/server.js",
+    "dev": "npx concurrently \"npm run server\" \"npm run pipeline\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "axios": "^1.7.0",
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "nodemailer": "^6.9.0"
+  }
+}

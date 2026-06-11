@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>MEP monitoring in scoliosis surgery — IONM tech guide | ZinniaX</title>
+  <meta name="description" content="Learn MEP baseline setup, 50% amplitude alert criteria, and surgical communication protocols for scoliosis IONM. A practical guide for IONM techs and neurophysiologists.">
+  <meta name="keywords" content="MEP monitoring scoliosis surgery, motor evoked potentials, IONM alert criteria, neuromonitoring, scoliosis IONM tech">
+  <link rel="canonical" href="https://zinniax.com/blog/mep-monitoring-scoliosis-surgery">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ZinniaX Editorial Team">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MEP monitoring in scoliosis surgery — IONM tech guide | ZinniaX">
+  <meta property="og:description" content="Learn MEP baseline setup, 50% amplitude alert criteria, and surgical communication protocols for scoliosis IONM. A practical guide for IONM techs and neurophysiologists.">
+  <meta property="og:url" content="https://zinniax.com/blog/mep-monitoring-scoliosis-surgery">
+  <meta property="og:site_name" content="ZinniaX">
+  <meta property="article:section" content="IONM Best Practices">
+  <meta property="article:tag" content="MEP monitoring">
+  <meta property="article:tag" content="scoliosis surgery">
+  <meta property="article:tag" content="motor evoked potentials">
+  <meta property="article:tag" content="IONM alert criteria">
+  <meta property="article:tag" content="neuromonitoring">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MEP monitoring in scoliosis surgery — IONM tech guide">
+  <meta name="twitter:description" content="Learn MEP baseline setup, 50% amplitude alert criteria, and surgical communication protocols for scoliosis IONM.">
+  <meta name="twitter:site" content="@zinniax">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MEP Monitoring in Scoliosis Surgery: What Every IONM Tech Needs to Know",
+    "description": "Learn MEP baseline setup, 50% amplitude alert criteria, and surgical communication protocols for scoliosis IONM.",
+    "url": "https://zinniax.com/blog/mep-monitoring-scoliosis-surgery",
+    "datePublished": "2026-06-08T00:00:00Z",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ZinniaX",
+      "url": "https://zinniax.com",
+      "logo": { "@type": "ImageObject", "url": "https://zinniax.com/logo.png" }
+    },
+    "keywords": "MEP monitoring scoliosis surgery, motor evoked potentials, IONM alert criteria, neuromonitoring"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #0f4c81;
+      --primary-light: #e8f1fa;
+      --accent: #1d9e75;
+      --accent-light: #e1f5ee;
+      --text: #1a1a2e;
+      --muted: #4a5568;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --max: 800px;
+      --r: 8px;
+      --rl: 12px;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--surface); color: var(--text); line-height: 1.75; font-size: 16px; }
+
+    /* Header */
+    .hdr { background: var(--primary); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .hdr .logo { font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -.02em; }
+    .hdr .logo span { color: #5dcaa5; }
+    .hdr nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; margin-left: 1.25rem; }
+    .hdr nav a:hover { color: #fff; }
+
+    /* Breadcrumb */
+    .crumb { max-width: var(--max); margin: 0 auto; padding: .75rem 1.25rem; font-size: 13px; color: var(--muted); }
+    .crumb a { color: var(--primary); text-decoration: none; }
+    .crumb a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    /* SEO Bar */
+    .seo-bar { background: var(--primary-light); border: 1px solid #c3d9f0; border-radius: var(--r); padding: .875rem 1.125rem; margin-bottom: 1rem; }
+    .seo-bar-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--primary); opacity: .6; margin-bottom: .5rem; }
+    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .5rem .75rem; }
+    .seo-item { display: flex; flex-direction: column; gap: 2px; }
+    .seo-label { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); opacity: .65; }
+    .seo-val { font-size: 13px; font-weight: 600; color: var(--primary); }
+
+    /* Meta description bar */
+    .meta-bar { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--r); padding: .75rem 1.125rem; margin-bottom: 1.5rem; }
+    .meta-bar .seo-label { color: #065f46; }
+    .meta-bar .seo-val { font-size: 14px; font-weight: 400; color: #064e3b; }
+    .meta-chars { font-size: 11px; color: #059669; font-weight: 600; margin-left: 6px; }
+
+    /* Hero */
+    .hero { background: var(--bg); border: 1px solid var(--border); border-radius: var(--rl); padding: 2rem 2rem 1.75rem; margin-bottom: 1.25rem; }
+    .badge { display: inline-block; background: var(--accent-light); color: #0f6e56; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 99px; letter-spacing: .04em; text-transform: uppercase; margin-bottom: .875rem; }
+    .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.25; letter-spacing: -.02em; margin-bottom: .875rem; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; font-size: 13px; color: var(--muted); margin-bottom: 1.125rem; }
+    .excerpt { font-size: 15px; color: var(--muted); line-height: 1.7; border-left: 3px solid var(--accent); padding-left: 1rem; }
+
+    /* Tags */
+    .tags-wrap { margin-bottom: 1.25rem; }
+    .tags-label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .5rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 12px; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--border); color: var(--muted); background: var(--bg); }
+
+    /* Internal links */
+    .int-links { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .int-links h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .5rem; }
+    .int-links ul { padding-left: 1.25rem; }
+    .int-links li { font-size: 14px; margin-bottom: .2rem; }
+    .int-links a { color: var(--primary); text-decoration: none; }
+    .int-links a:hover { text-decoration: underline; }
+
+    /* Body */
+    .body-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--rl); padding: 2rem; }
+    .body-card h2 { font-size: 20px; font-weight: 700; color: var(--primary); margin: 2rem 0 .75rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .body-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .body-card p { margin-bottom: 1rem; }
+    .body-card ul, .body-card ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+    .body-card li { margin-bottom: .35rem; }
+    .body-card strong { font-weight: 600; }
+
+    /* Alert box */
+    .alert-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--r); padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .alert-box strong { color: #c2410c; display: block; margin-bottom: .4rem; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+    .alert-box p { margin: 0; font-size: 15px; color: #7c2d12; }
+
+    /* CTA */
+    .cta { background: var(--primary); border-radius: var(--rl); padding: 2rem; text-align: center; margin-top: 2rem; }
+    .cta p { color: rgba(255,255,255,.85); font-size: 15px; margin-bottom: 1rem; line-height: 1.6; }
+    .cta a { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 15px; padding: .75rem 2rem; border-radius: 6px; text-decoration: none; }
+    .cta a:hover { background: #178a63; }
+
+    /* Footer */
+    footer { background: var(--text); color: rgba(255,255,255,.55); text-align: center; padding: 1.5rem; font-size: 13px; margin-top: 3rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media(max-width:600px){
+      .hero h1 { font-size: 22px; }
+      .hero, .body-card { padding: 1.25rem; }
+      .seo-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <a href="https://zinniax.com" class="logo">Zinnia<span>X</span></a>
+  <nav>
+    <a href="https://zinniax.com/blog">Blog</a>
+    <a href="https://zinniax.com/features">Features</a>
+    <a href="https://zinniax.com/contact">Contact</a>
+  </nav>
+</header>
+
+<div class="crumb">
+  <a href="https://zinniax.com">Home</a> &rsaquo; <a href="https://zinniax.com/blog">Blog</a> &rsaquo; MEP monitoring in scoliosis surgery
+</div>
+
+<main class="wrap">
+
+  <!-- SEO Metadata Bar -->
+  <div class="seo-bar">
+    <div class="seo-bar-title">&#128269; SEO Metadata — Generated by ZinniaX Blog Agent</div>
+    <div class="seo-grid">
+      <div class="seo-item"><span class="seo-label">SEO Title</span><span class="seo-val">MEP monitoring in scoliosis surgery — IONM tech guide</span></div>
+      <div class="seo-item"><span class="seo-label">Focus Keyword</span><span class="seo-val">MEP monitoring scoliosis surgery</span></div>
+      <div class="seo-item"><span class="seo-label">URL Slug</span><span class="seo-val">/blog/mep-monitoring-scoliosis-surgery</span></div>
+      <div class="seo-item"><span class="seo-label">Category</span><span class="seo-val">IONM Best Practices</span></div>
+      <div class="seo-item"><span class="seo-label">Read Time</span><span class="seo-val">6 min read</span></div>
+      <div class="seo-item"><span class="seo-label">Word Count</span><span class="seo-val">~950 words</span></div>
+    </div>
+  </div>
+
+  <div class="meta-bar">
+    <div class="seo-label">Meta Description <span class="meta-chars">152 chars &#10003;</span></div>
+    <div class="seo-val">Learn MEP baseline setup, 50% amplitude alert criteria, and surgical communication protocols for scoliosis IONM. A practical guide for IONM techs and neurophysiologists.</div>
+  </div>
+
+  <article>
+
+    <!-- Hero -->
+    <div class="hero">
+      <span class="badge">IONM Best Practices</span>
+      <h1>MEP monitoring in scoliosis surgery: what every IONM tech needs to know</h1>
+      <div class="meta-row">
+        <span>&#128197; June 8, 2026</span>
+        <span>&#9201; 6 min read</span>
+        <span>&#127981; Scoliosis &bull; Spine Surgery &bull; MEP</span>
+      </div>
+      <p class="excerpt">Motor evoked potential monitoring during scoliosis correction is among the highest-stakes work in IONM. This guide covers baseline establishment, alert criteria, and the critical communication steps that protect patients when MEP changes occur intraoperatively.</p>
+    </div>
+
+    <!-- Tags -->
+    <div class="tags-wrap">
+      <div class="tags-label">Tags</div>
+      <div class="tags">
+        <span class="tag">MEP monitoring</span>
+        <span class="tag">scoliosis surgery</span>
+        <span class="tag">motor evoked potentials</span>
+        <span class="tag">IONM alert criteria</span>
+        <span class="tag">neuromonitoring</span>
+        <span class="tag">spine surgery IONM</span>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="int-links">
+      <h3>&#128279; Internal link suggestions</h3>
+      <ul>
+        <li><a href="https://zinniax.com/blog/ssep-monitoring-beginners-guide">/blog/ssep-monitoring-beginners-guide</a></li>
+        <li><a href="https://zinniax.com/blog/ionm-alert-communication-protocols">/blog/ionm-alert-communication-protocols</a></li>
+        <li><a href="https://zinniax.com/features/documentation">/features/documentation</a></li>
+        <li><a href="https://zinniax.com/blog/iom-documentation-billing-compliance">/blog/iom-documentation-billing-compliance</a></li>
+      </ul>
+    </div>
+
+    <!-- Body -->
+    <div class="body-card">
+
+      <h2>Why MEP monitoring is essential in scoliosis correction</h2>
+
+      <p>Adolescent idiopathic scoliosis (AIS) and adult degenerative scoliosis corrections rank among the most neurologically demanding procedures performed in the OR. The surgical steps — pedicle screw placement, rod insertion, curve correction maneuvers — each carry real risk to the motor pathways running through the anterior spinal cord. A motor deficit that goes undetected can be irreversible. That is the exact problem MEP monitoring exists to solve.</p>
+
+      <p>Motor evoked potentials work by delivering a transcranial electrical stimulus that depolarizes the motor cortex, generating a descending volley through the corticospinal tract to the target muscle. The resulting compound muscle action potential (CMAP) is recorded from needle electrodes placed in bilateral muscle groups — typically the tibialis anterior, abductor hallucis, vastus medialis, and upper extremity muscles depending on the level of surgical risk. Unlike SSEPs, which monitor the sensory dorsal columns, MEPs provide a direct window into the motor tract — the pathway most at risk during deformity correction.</p>
+
+      <p>For IONM techs new to scoliosis cases, the most important conceptual shift is understanding that you are watching a dynamic, actively changing signal throughout the entire case — not a stable baseline you periodically compare. Deformity correction applies real mechanical forces to the cord, and changes can be abrupt.</p>
+
+      <h2>Establishing a reliable MEP baseline and recognizing significant changes</h2>
+
+      <p>A strong, reproducible baseline is the foundation of every meaningful MEP alert. Before the first incision, you must achieve stable, repeatable CMAPs in all monitored muscle groups. This means:</p>
+
+      <ul>
+        <li><strong>Anesthetic stability:</strong> MEPs are profoundly sensitive to anesthetic depth. Total intravenous anesthesia (TIVA) with propofol and remifentanil is the standard for MEP-compatible cases — volatile agents above 0.5 MAC will suppress or abolish cortical MEPs. Confirm TIVA is running and anesthetic levels are stable before recording your baseline.</li>
+        <li><strong>Neuromuscular blockade (NMB):</strong> Muscle relaxants block the neuromuscular junction and eliminate the CMAP. Ensure NMB has fully reversed (train-of-four ratio &ge; 0.9) before recording. Re-confirm throughout the case if additional relaxant is given.</li>
+        <li><strong>Stimulation parameters:</strong> Transcranial MEP stimulation uses a train of 4–7 pulses, typically 50–75 ms interstimulus interval, at intensities ranging from 100–400 mA. Start at the lowest effective intensity that yields reliable, consistent responses and document those parameters as your standard for the case.</li>
+        <li><strong>Bilateral symmetry:</strong> Document left and right amplitudes separately. Asymmetry at baseline can be normal — what matters is change from that individual patient's baseline, not comparison to the other side.</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>&#9888; Standard MEP Alert Criteria</strong>
+        <p>A &ge;50% reduction in peak-to-peak CMAP amplitude compared to baseline, sustained across two consecutive stimulations, constitutes a significant MEP alert requiring immediate notification of the surgical and anesthesia teams.</p>
+      </div>
+
+      <p>Some institutions also use complete signal loss (amplitude falling to noise floor) as an immediate stop-and-assess threshold, regardless of the 50% rule. Know your institution's specific criteria before the case begins and confirm them with the attending neurophysiologist.</p>
+
+      <h2>When MEP alerts fire: communication, intervention, and documentation</h2>
+
+      <p>An MEP alert is a team event — not just a tech event. When a significant amplitude change occurs, the response must be fast, systematic, and clearly communicated. Here is the standard sequence:</p>
+
+      <ol>
+        <li><strong>Troubleshoot first, but fast.</strong> Before alarming the surgeon, take 15–30 seconds to rule out technical causes: check stimulation impedances, confirm NMB status with the anesthesiologist, verify electrode positions haven't shifted, and run one additional stimulation trial. Do not delay if the second run confirms the change — move immediately to step 2.</li>
+        <li><strong>Notify the surgeon and anesthesiologist simultaneously.</strong> Use a direct, unambiguous statement: "I have a 60% MEP amplitude decrease in bilateral tibialis anterior, confirmed on two runs." Avoid hedging language. Surgeons in the middle of a correction maneuver need a clear signal.</li>
+        <li><strong>Support the intervention.</strong> The team will typically pause surgical manipulation, ask anesthesia to optimize MAP (mean arterial pressure), check implant positions, and possibly reverse recent correction steps. Your job during this period is continuous monitoring — run MEP stimulations every 1–2 minutes and report real-time changes in amplitude recovery or further decline.</li>
+        <li><strong>Document everything with timestamps.</strong> Record the exact time of amplitude change, the parameters at alert, the intervention(s) performed, and the amplitude trajectory through recovery. This documentation is clinically essential and legally significant.</li>
+      </ol>
+
+      <p>If MEP signals do not recover despite interventions — particularly if bilateral lower extremity responses are lost completely — the surgeon may elect to perform a wake-up test (Stagnara test), waking the patient sufficiently to assess voluntary motor function before proceeding. This is a high-intensity moment that requires calm, clear communication from the IONM team.</p>
+
+      <p>MEP monitoring in scoliosis is not a passive recording exercise. It demands active vigilance, technical precision, and the clinical communication skills to act decisively when the nervous system signals danger. Building these competencies early — and having the documentation infrastructure to support them — is what separates a reactive IONM team from a proactive one.</p>
+
+      <div class="cta">
+        <p>ZinniaX gives IONM teams structured MEP event documentation, timestamped alert logging, and real-time surgeon communication tools — all built into a single clinical workflow platform.</p>
+        <a href="https://zinniax.com" target="_blank" rel="noopener">See how ZinniaX supports scoliosis IONM &rarr;</a>
+      </div>
+
+    </div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 ZinniaX &mdash; Clinical Workflow Management for IONM &amp; EEG &mdash; <a href="https://zinniax.com">zinniax.com</a></p>
+</footer>
+
+</body>
+</html>
