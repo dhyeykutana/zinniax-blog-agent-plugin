@@ -187,4 +187,4 @@ This uses `concurrently` to run the approval server and orchestrator in parallel
 
 ## License
 
-[MIT](LICENSE) © 2026 Sunflower Lab
+[MIT](LICENSE) © 2026 Dhyey Kutana
