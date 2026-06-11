@@ -2,6 +2,7 @@
   "name": "zinniax-blog-agent",
   "version": "1.0.0",
   "description": "Multi-agent pipeline to auto-write and publish IONM blog posts to ZinniaX WordPress",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "start": "node cli/start.js",
