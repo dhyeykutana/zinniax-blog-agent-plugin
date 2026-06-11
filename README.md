@@ -46,6 +46,43 @@ An autonomous multi-agent pipeline that researches, writes, SEO-optimizes, and p
 
 ---
 
+## Setup in Claude Cowork
+
+Running the pipeline inside **Claude Cowork** (cloud agent) instead of your local machine. Same code, three differences: dependencies install in the cloud sandbox, secrets go in Cowork's environment, and the approval server must be exposed via a public tunnel (approvers can't reach the sandbox's `localhost`).
+
+1. **Connect the repo.** In Cowork, attach this GitHub repo (`dhyeykutana/zinniax-blog-agent-plugin`) as the working directory.
+
+2. **Install dependencies** — Cowork's sandbox starts clean:
+   ```bash
+   npm install
+   ```
+
+3. **Set secrets as environment variables.** Do **not** commit `.env`. Add each variable from the [Environment Variables](#environment-variables) table to Cowork's environment/secrets panel. At minimum: `ANTHROPIC_API_KEY`, `WP_URL`, `WP_USERNAME`, `WP_APP_PASSWORD`, `SMTP_*`, `EMAIL_*`.
+
+4. **Expose the approval server publicly.** The sandbox's `localhost:3001` is unreachable from approvers' inboxes. Start the server, then tunnel it:
+   ```bash
+   npm run server          # Terminal 1 — approval server on :3001
+   ngrok http 3001         # Terminal 2 — public URL
+   ```
+   Copy the `https://<id>.ngrok-free.app` URL ngrok prints.
+
+5. **Point approval links at the tunnel.** Set:
+   ```bash
+   APPROVAL_SERVER_URL=https://<id>.ngrok-free.app/approve
+   ```
+   Re-run with this set so emailed Approve/Publish links resolve to the public URL instead of `localhost`.
+
+6. **Run the pipeline:**
+   ```bash
+   npm start
+   # or a specific topic:
+   node orchestrator.js "MEP monitoring in scoliosis surgery"
+   ```
+
+> ⚠️ Tokens are stored in memory — if the Cowork sandbox or server restarts mid-flow, pending approval links expire. Keep the server process alive until both human gates clear.
+
+---
+
 ## Environment Variables
 
 | Variable | Description |
